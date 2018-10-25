@@ -3,14 +3,14 @@ package ds;
 //Java program to demonstrate working of newInstance() 
 
 //Sample classes 
-class A {  int a; } 
-class B {  int b; } 
+class A {  int a; int b; void m1() {} } 
+class B {  A m2() {return new A();} void m3() {} } 
 
 public class Test 
 { 
  // This method creates an instance of class whose name is  
  // passed as a string 'c'. 
- public static void fun(String c)  throws InstantiationException, 
+/* public static void fun(String c)  throws InstantiationException, 
      IllegalAccessException, ClassNotFoundException 
  { 
      // Create an object of type 'c'  
@@ -20,11 +20,13 @@ public class Test
      System.out.println("Object created for class:"
                      + obj.getClass().getName()); 
  } 
-
+*/
  // Driver code that calls main() 
- public static void main(String[] args) throws InstantiationException, 
- IllegalAccessException, ClassNotFoundException 
+ public static void main(String[] args) 
  { 
-      fun("A"); 
+	 
+	A a1=new B().m2();
+	
+   //This is jeeva editing   
  }    
 } 
